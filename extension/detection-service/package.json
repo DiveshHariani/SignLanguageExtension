@@ -1,0 +1,28 @@
+{
+  "name": "hand_sign",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "mustapha ait boukhliq",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "regenerator-runtime": "^0.13.9",
+    "styled-components": "^5.3.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.2",
+    "mongoose": "^5.13.14",
+    "nodemon": "^2.0.15",
+    "pug": "^3.0.2"
+  },
+  "engines": {
+    "node": "^14"
+  }
+}

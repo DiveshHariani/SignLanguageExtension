@@ -1,0 +1,7 @@
+step 1 - install pip
+step 2 - install virtual env (pip install virtualenv)
+step 3 - start a virtual env of folder in app.py (virtualenv -p python3 venv) if fails (python -m virtualenv venv)
+step 4 - activate virtual env (source venv/bin/activate) //search for mac
+step 5 - install packages (pip install -r requirement.txt)
+step 6 - python app.py
+
