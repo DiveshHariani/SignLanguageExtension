@@ -1,1 +1,7 @@
+# For Mac systems
 **/.DS_Store
+
+**/node_modules/
+
+# environment for recognition-service
+**/testenv/

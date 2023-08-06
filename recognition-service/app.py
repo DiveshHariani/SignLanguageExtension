@@ -1,19 +1,10 @@
 from flask import Flask, jsonify, request
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-
-from sklearn.linear_model import LogisticRegression, RidgeClassifier
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-import mediapipe as mp # Import mediapipe
-import cv2 # Import opencv
 import pandas as pd
 import pickle
 from flask_cors import CORS, cross_origin
 from translate import Translator
+
 translator= Translator(to_lang="Hindi")
-
-
-
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -100,22 +91,3 @@ def apiHindi():
 
 if __name__ == '__main__':
    app.run()
-
-
-	# if(len(req['x']) > 42):
-	# 	for i in range(len(req['x'])):
-	# 		row.append(req['x'][i])
-	# 		row.append(req['y'][i])
-	# 		row.append(req['z'][i])
-	# 		row.append(req['v'][i])
-	# else:
-	# 	zero = [0 for i in range(127-len(req['x']))]
-	# 	req['x'] = req['x'] + zero
-	# 	req['y'] = req['y'] + zero
-	# 	req['z'] = req['z'] + zero
-	# 	req['v'] = req['v'] + zero
-	# 	for i in range(len(req['x'])):
-	# 		row.append(req['x'][i])
-	# 		row.append(req['y'][i])
-	# 		row.append(req['z'][i])
-	# 		row.append(req['v'][i])
