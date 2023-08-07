@@ -31,7 +31,7 @@ def api():
 			allNone = False
 
 	if not allNone:
-		with open('body_language046.pkl', 'rb') as f:
+		with open('body_language.pkl', 'rb') as f:
 			model = pickle.load(f)
 		X = pd.DataFrame([row])
 		body_language_class = model.predict(X)[0]
@@ -67,7 +67,7 @@ def apiHindi():
 			allNone = False
 
 	if not allNone:
-		with open('body_language046.pkl', 'rb') as f:
+		with open('body_language.pkl', 'rb') as f:
 			model = pickle.load(f)
 		X = pd.DataFrame([row])
 		body_language_class = model.predict(X)[0]
