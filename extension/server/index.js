@@ -34,10 +34,7 @@ app.all('*', (req, res) => {
 //global err
 app.use(globalErrorController);
 
-app.listen(3000, 'localhost', (err) => {
-    if(!err) {
-        console.log("Turned on Server")
-    }
-})
+const port = process.env.PORT || 3000;
+app.listen(port, '0.0.0.0', () => {console.log("Server running!")});
 
 module.exports = app;
