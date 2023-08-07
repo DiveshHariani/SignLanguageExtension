@@ -105,7 +105,7 @@ function Foreground() {
                     e.preventDefault();
                     if(e.target.classList.contains('active')){
                         let token = window.localStorage.getItem('sign_token');
-                        const testHoster = await axios.delete(`https://still-plains-34816.herokuapp.com/hoster/${location.pathname}/${token}`);
+                        const testHoster = await axios.delete(`http://localhost:3000/hoster/${location.pathname}/${token}`);
                         if(testHoster.data.status == 'ok'){
                             window.localStorage.removeItem('sign_token');
                             e.target.classList.remove('active');
@@ -119,17 +119,17 @@ function Foreground() {
                     if(!token){
                         token = (Math.random() + 1).toString(36).substring(7);
                     }
-                    const testHoster = await axios.post(`https://still-plains-34816.herokuapp.com/hoster/${location.pathname}/${token}`);
+                    const testHoster = await axios.post(`http://localhost:3000/hoster/${location.pathname}/${token}`);
     
                     if(testHoster.data.status == 'again'){
                         e.target.classList.add('active');
-                        document.documentElement.insertAdjacentHTML('afterbegin', `<iframe class='hand_sign active' src="https://still-plains-34816.herokuapp.com/video?h=${360}&w=${640}&token=${token}" scrolling="no" style="overflow: hidden;" allow="camera;microphone"></iframe>`);
+                        document.documentElement.insertAdjacentHTML('afterbegin', `<iframe class='hand_sign active' src="http://localhost:3000/video?h=${360}&w=${640}&token=${token}" scrolling="no" style="overflow: hidden;" allow="camera;microphone"></iframe>`);
                         return
                     }
                     if(testHoster.data.status == 'ok'){
                         window.localStorage.setItem('sign_token', token);
                         e.target.classList.add('active');
-                        document.documentElement.insertAdjacentHTML('afterbegin', `<iframe class='hand_sign active' src="https://still-plains-34816.herokuapp.com/video?h=${360}&w=${640}&token=${token}" scrolling="no" style="overflow: hidden;" allow="camera;microphone"></iframe>`);
+                        document.documentElement.insertAdjacentHTML('afterbegin', `<iframe class='hand_sign active' src="http://localhost:3000/video?h=${360}&w=${640}&token=${token}" scrolling="no" style="overflow: hidden;" allow="camera;microphone"></iframe>`);
                         return
                     }
                     //already hosted
@@ -233,7 +233,7 @@ function Foreground() {
                 });
                 async function getSentence() {
                     console.log("TEST DEV")
-                    const req = await axios.get(`https://still-plains-34816.herokuapp.com/hoster/${location.pathname}/get`);
+                    const req = await axios.get(`http://localhost:3000/hoster/${location.pathname}/get`);
                     let text = req.data.sentence;
                     if(typeof text == 'object') {
                         if(text.length == 0) return;
@@ -254,7 +254,7 @@ function Foreground() {
     window.onunload = async function(){
         let token = window.localStorage.getItem('sign_token');
         if(token){
-            await axios.delete(`https://still-plains-34816.herokuapp.com/hoster/${location.pathname}/${token}`); 
+            await axios.delete(`http://localhost:3000/hoster/${location.pathname}/${token}`); 
         }
     }
 

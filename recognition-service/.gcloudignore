@@ -13,6 +13,8 @@
 .git
 .gitignore
 
+# ignore the environment files
+testenv/
 # Python pycache:
 __pycache__/
 # Ignored by the build system
