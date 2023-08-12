@@ -1,40 +1,24 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
-const globalErrorController = require('./controllers/error');
-//routers
-const hosterRouter = require(`${__dirname}/routes/hoster`);
-const app = express();
+const app = require('./index');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
-
-//serving static files
-app.use(express.static(path.join(__dirname, '/public')));
+dotenv.config({ path: `${__dirname}/./config.env` });
 
 
-app.use(cors());
-app.use(express.json({ limit: '5000mb' }));
-app.use(express.urlencoded({ extended: false, limit: "5000mb" }));
-
-app.use('/hoster', hosterRouter);
-
-app.get('/video', async (req, res)=>{
-    console.log("Here");
-    let {h, w, token} = {...req.query};
-    let resetSentence = process.env.RESET_SENTENCE*1000;
-    let newReqEvery = process.env.NEW_REQEUST_EVERY*1000;
-    res.render('base', {h, w, token, resetSentence, newReqEvery});
+DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
+mongoose.connect(DB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+}).then(connectio => {
+    console.log('connection to dataBase successful');
+}).catch((er) => {
+    console.log('bad auth/db');
 });
 
-app.all('*', (req, res) => {
-    res.send('hand sign live!')
-});
-
-//global err
-app.use(globalErrorController);
-
-const port = process.env.PORT || 3000;
-app.listen(port, '0.0.0.0', () => {console.log("Server running!")});
-
-module.exports = app;
+const PORT = process.env.PORT || 3000;
+// const PORT = 3000;
+app.listen(PORT, '0.0.0.0', () => {
+    console.log('server is running!', PORT);
+})

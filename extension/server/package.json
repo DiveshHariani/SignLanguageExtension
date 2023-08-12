@@ -6,7 +6,7 @@
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "mustapha ait boukhliq",
+  "author": "Divesh Hariani, Tanya Raisinghani, Shripad, Amit Chabbria",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.24.0",

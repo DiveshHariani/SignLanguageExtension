@@ -101,10 +101,12 @@ function Foreground() {
                 testWindow = true;
                 document.querySelector("body").insertAdjacentHTML('beforeend', hoster);
                 alert('ok')
-                document.getElementById('hoster').addEventListener('click',async (e)=>{
+
+                document.getElementById('hoster').addEventListener('click', async (e)=>{
                     e.preventDefault();
                     if(e.target.classList.contains('active')){
                         let token = window.localStorage.getItem('sign_token');
+        
                         const testHoster = await axios.delete(`http://localhost:3000/hoster/${location.pathname}/${token}`);
                         if(testHoster.data.status == 'ok'){
                             window.localStorage.removeItem('sign_token');
@@ -119,6 +121,7 @@ function Foreground() {
                     if(!token){
                         token = (Math.random() + 1).toString(36).substring(7);
                     }
+                    console.log("Token", token);
                     const testHoster = await axios.post(`http://localhost:3000/hoster/${location.pathname}/${token}`);
     
                     if(testHoster.data.status == 'again'){
