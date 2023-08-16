@@ -10,3 +10,10 @@ Architecture:
 - Detection Service(NodeJS API) @ https://sih-detection-service.wl.r.appspot.com/ [disabled - ondemand]
 
 #### Contributors Note: Create a branch for changes. Do NOT push in main. :)
+
+Team Members:
+- Divesh Hariani
+- Bhuvana Raisinghani
+- Amit Chabbria
+- Manasee Parulekar
+- Varun Bhat
