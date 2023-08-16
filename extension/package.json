@@ -12,7 +12,7 @@
   },
   "default": "main.js",
   "keywords": [],
-  "author": "mustapha ait boukhliq",
+  "author": "Divesh Hariani",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.24.0",
