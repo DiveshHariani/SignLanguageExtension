@@ -17,3 +17,4 @@ Team Members:
 - Amit Chabbria
 - Manasee Parulekar
 - Varun Bhat
+- Shripad Kulkarni
