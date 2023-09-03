@@ -15,6 +15,6 @@ Team Members:
 - Divesh Hariani
 - Bhuvana Raisinghani
 - Amit Chabbria
-- Manasee Parulekar
 - Varun Bhat
+-  Manasee Parulekar
 - Shripad Kulkarni
