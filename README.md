@@ -2,6 +2,15 @@
 
 This project creates a Google Chrome Extension for Google Meet which enables the easy communication in Google Meet for Deaf and Mute People. This extension recognizes the sign languages from the Google Meet Video and converts that to Google Meet Captions and also converts text to speech. It supports conversations in English, Hindi, and American Sign Language.
 
+Tech Stack:
+- React.js
+- Node.js
+- Flask
+- Python
+- Tensorflow
+- Google Cloud Platform
+- MongoDB
+
 Architecture: 
 <br />
 <img width="561" alt="Screen Shot 2023-08-08 at 4 38 36 PM" src="https://github.com/DiveshHariani/SignLanguageExtension/assets/56154666/0b364447-0a47-4462-80fd-720a10f8438f">
